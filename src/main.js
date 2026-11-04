@@ -12,7 +12,6 @@ import {initSorting} from "./components/sorting.js";
 import {initFiltering} from "./components/filtering.js";
 import {initSearching} from "./components/searching.js";
 
-// Исходные данные используемые в render()
 const {data, ...indexes} = initData(sourceData);
 
 /**
@@ -55,13 +54,11 @@ const sampleTable = initTable({
     after: ['pagination']
 }, render);
 
-// Инициализация сортировки
 const applySorting = initSorting([
     sampleTable.header.elements.sortByDate,
     sampleTable.header.elements.sortByTotal
 ]);
 
-// Инициализация пагинации
 const applyPagination = initPagination(
     sampleTable.pagination.elements,
     (el, page, isCurrent) => {
